@@ -1,4 +1,4 @@
-from locust import HttpUser, task, constant
+from locust import HttpUser, constant, task
 
 
 class LoadTest(HttpUser):
@@ -8,9 +8,7 @@ class LoadTest(HttpUser):
     @task
     def predict_batch_1(self):
         request_body = {"batches": [[1.0 for i in range(13)]]}
-        self.client.post(
-            "http://batch-1:80/predict", json=request_body, name="batch-1"
-        )
+        self.client.post("http://batch-1:80/predict", json=request_body, name="batch-1")
 
     @task
     def predict_batch_32(self):

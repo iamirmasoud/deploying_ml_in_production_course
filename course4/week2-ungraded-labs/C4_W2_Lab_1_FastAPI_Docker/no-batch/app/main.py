@@ -1,8 +1,8 @@
 import pickle
+
 import numpy as np
 from fastapi import FastAPI
 from pydantic import BaseModel
-
 
 app = FastAPI(title="Predicting Wine Class")
 

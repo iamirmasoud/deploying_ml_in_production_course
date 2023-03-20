@@ -59,10 +59,10 @@ Take a look at the command that will spin up a container to serve the model unde
 
 
 ```bash
-docker run --rm -p 8501:8501 \
-  --mount type=bind,\
-source=/tmp/tfserving/serving/tensorflow_serving/servables/tensorflow/testdata/saved_model_half_plus_two_cpu,\
-target=/models/half_plus_two \
+TESTDATA="$(pwd)/serving/tensorflow_serving/servables/tensorflow/testdata"
+
+docker run --rm -p 8501:8501 \                                          
+  --mount type=bind,source="$TESTDATA/saved_model_half_plus_two_cpu",target=/models/half_plus_two \
   -e MODEL_NAME=half_plus_two -t tensorflow/serving &
 ```
 
