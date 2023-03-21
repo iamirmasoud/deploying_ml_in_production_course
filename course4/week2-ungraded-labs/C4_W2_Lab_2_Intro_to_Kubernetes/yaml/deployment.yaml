@@ -23,13 +23,13 @@ spec:
         volumeMounts:
           - name: tf-serving-volume
             mountPath: /models/half_plus_two
-        resources:
-          requests:
-            memory: 32M
-            cpu: 5m
-          limits:
-            memory: 64M
-            cpu: 10m
+#        resources:
+#          requests:
+#            memory: 32Mi
+#            cpu: 400m
+#          limits:
+#            memory: 64Mi
+#            cpu: 10m
 
       volumes:
         - name: tf-serving-volume
