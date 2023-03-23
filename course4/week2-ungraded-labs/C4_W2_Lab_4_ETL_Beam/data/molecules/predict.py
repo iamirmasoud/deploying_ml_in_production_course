@@ -39,7 +39,6 @@ class Predict(beam.DoFn):
         self.model = None
 
     def process(self, inputs):
-
         # Load the model only if it hasn't been loaded yet
         if not self.model:
             self.model = tf.saved_model.load(self.model_dir)

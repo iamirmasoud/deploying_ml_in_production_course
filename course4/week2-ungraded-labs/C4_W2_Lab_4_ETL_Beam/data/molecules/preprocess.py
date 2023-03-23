@@ -39,7 +39,6 @@ class PreprocessData(object):
     def __init__(
         self, input_feature_spec, labels, train_files_pattern, eval_files_pattern
     ):
-
         self.labels = labels
         self.input_feature_spec = input_feature_spec
         self.train_files_pattern = train_files_pattern

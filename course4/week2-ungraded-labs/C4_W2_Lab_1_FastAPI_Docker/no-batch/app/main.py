@@ -6,6 +6,7 @@ from pydantic import BaseModel
 
 app = FastAPI(title="Predicting Wine Class")
 
+
 # Represents a particular wine (or datapoint)
 class Wine(BaseModel):
     alcohol: float
